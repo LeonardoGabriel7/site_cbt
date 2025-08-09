@@ -123,52 +123,191 @@ body {
 
 /* Sobre */
 .sobre {
-  padding: 4rem 0;
-  background: #fff;
-  text-align: center;
+  padding: 5rem 0;
+  background: #f8f9fa;
 }
 
-.sobre h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
 }
 
-.sobre p {
-  max-width: 700px;
-  margin: 0 auto;
-  color: var(--cinza-escuro);
+.sobre-texto h2 {
+  font-size: 2.5rem;
+  color: var(--verde-principal, #1e7e34);
+  margin-bottom: 1.5rem;
 }
+
+.sobre-texto p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--cinza-escuro, #444);
+  margin-bottom: 1.2rem;
+}
+
+.sobre-imagem img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.sobre-imagem img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .sobre-imagem {
+    order: -1;
+  }
+}
+
+
 
 /* Serviços */
 .servicos {
-  padding: 4rem 0;
-  background: var(--cinza-claro);
+  padding: 5rem 0;
+  background: #fff;
   text-align: center;
 }
 
 .servicos h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: var(--verde-principal, #1e7e34);
 }
 
-.cards {
+.servicos .subtitulo {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.servicos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
-.card {
-  background: #fff;
+.servico-card {
+  background: #f8f9fa;
+  border-radius: 12px;
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  text-align: left;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card h3 {
-  color: var(--verde);
-  margin-bottom: 0.5rem;
+.servico-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
+
+.servico-card h3 {
+  font-size: 1.3rem;
+  color: var(--verde-principal, #1e7e34);
+  margin-bottom: 1rem;
+}
+
+.servico-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.btn-conhecer {
+  background: var(--verde-principal, #1e7e34);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  align-self: flex-start;
+}
+
+.btn-conhecer:hover {
+  background: #155d27;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .servico-card {
+    text-align: left;
+  }
+}
+
+
+
+
+
+
+/* ===== SEÇÃO NA MEDIDA CERTA ===== */
+.cbt-metrica-section {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #222;
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+.cbt-metrica-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+.cbt-metrica-desc {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    margin: 10px auto 30px;
+}
+.cbt-metrica-subtitle {
+    font-size: 1.3rem;
+    color: #000;
+    margin-bottom: 20px;
+}
+.cbt-metrica-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+.cbt-metrica-stat {
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 12px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.cbt-metrica-stat h2 {
+    font-size: 2rem;
+    color: #00a859;
+    margin: 0;
+}
+.cbt-metrica-stat p {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0 0;
+}
+@media(max-width: 600px){
+    .cbt-metrica-stat {
+        width: 100%;
+    }
+}
+
 
 /* Contato */
 .contato {
@@ -250,6 +389,10 @@ button[type="submit"]:hover {
   }
 }
 
+
+
+
+
 </style>
 
 </head>
@@ -283,34 +426,140 @@ button[type="submit"]:hover {
     </div>
   </section>
 
-  <!-- Sobre -->
-  <section class="sobre" id="sobre">
-    <div class="container">
-      <h2>Quem Somos</h2>
-      <p>A CBT Recursos Humanos atua no mercado com foco em soluções personalizadas para gestão de pessoas...</p>
+  <!-- Sobre Nós -->
+<section class="sobre" id="sobre">
+  <div class="container sobre-grid">
+    <div class="sobre-texto">
+      <h2>Seja Bem-Vindo!</h2>
+      <p>
+        CBT – Consultoria, Benefícios e Treinamento, é uma empresa ágil, moderna e integradora.
+      </p>
+      <p>
+        Toda empresa necessita de bons profissionais de Recursos Humanos, que saibam como lidar com pessoas e como desenvolvê-las. 
+        Afinal, é comum que existam conflitos internos e também um alto índice de absenteísmo e rotatividade em empresas que não investem na equipe.
+      </p>
+      <p>
+        Porém, nem todas as empresas possuem capacidade financeira para manter uma equipe interna. 
+        Para isso, existem as consultorias de RH, que geralmente contam com profissionais especialistas em Gestão de Pessoas.
+      </p>
+      <p>
+        A consultoria pode trabalhar nos vários subsistemas de RH: Recrutamento e Seleção, Treinamento e Desenvolvimento, 
+        integração de novos colaboradores e trabalhos como pesquisa de clima e avaliação de desempenho.
+      </p>
+      <p>
+        Com uma boa consultoria, a empresa pode otimizar seu processo de recrutamento e até de gestão.
+      </p>
     </div>
-  </section>
+    <div class="sobre-imagem">
+      <img src="e244ed72-00a1-42e9-97c8-7ac81c0dc3de.png" alt="Equipe CBT Recursos Humanos">
+    </div>
+  </div>
+</section>
 
   <!-- Serviços -->
-  <section class="servicos" id="servicos">
-    <div class="container">
-      <h2>Nossos Serviços</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Recrutamento e Seleção</h3>
-          <p>Selecionamos os melhores talentos para sua empresa.</p>
-        </div>
-        <div class="card">
-          <h3>Treinamentos</h3>
-          <p>Capacitação profissional com foco em resultados.</p>
-        </div>
-        <div class="card">
-          <h3>Consultoria Organizacional</h3>
-          <p>Diagnósticos e soluções para melhoria da performance.</p>
-        </div>
+<section class="servicos" id="servicos">
+  <div class="container">
+    <h2>CBT - Recursos Humanos</h2>
+    <p class="subtitulo">Nossos Serviços</p>
+
+    <div class="servicos-grid">
+
+      <!-- Serviço 1 -->
+      <div class="servico-card">
+        <h3>Recrutamento e seleção por competência</h3>
+        <p>O recrutamento e seleção por competências é uma metodologia que tem como objetivo encontrar candidatos que atendam a um conjunto de competências necessárias para ocupar um cargo específico.</p>
+        <a href="#" class="btn-conhecer">CONHECER</a>
       </div>
+
+      <!-- Serviço 2 -->
+      <div class="servico-card">
+        <h3>Gestão de Pessoas RH Estratégico</h3>
+        <p>A gestão estratégica de RH é um modelo de trabalho que se diferencia dos métodos tradicionais. Nela a coordenação é feita de forma proativa, buscando soluções para suprir necessidades da empresa antes que elas apareçam.</p>
+        <a href="#" class="btn-conhecer">CONHECER</a>
+      </div>
+
+      <!-- Serviço 3 -->
+      <div class="servico-card">
+        <h3>Terceirização Folha de pagamento</h3>
+        <p>Ao terceirizar a folha de pagamento, você transfere para uma equipe especializada todos os cálculos referentes aos vencimentos dos colaboradores e demais processos relacionados.</p>
+        <a href="#" class="btn-conhecer">CONHECER</a>
+      </div>
+
+      <!-- Serviço 4 -->
+      <div class="servico-card">
+        <h3>Cargos e Salário por competência</h3>
+        <p>A remuneração por competência é uma forma de garantir que o funcionário receba um incentivo pelos serviços prestados, podendo ocorrer semanalmente, trimestral ou mensalmente.</p>
+        <a href="#" class="btn-conhecer">CONHECER</a>
+      </div>
+
+      <!-- Serviço 5 -->
+      <div class="servico-card">
+        <h3>Pesquisa de Clima Organizacional</h3>
+        <p>A pesquisa de clima organizacional ajuda a promover mudanças internas, melhorando o ambiente de trabalho e repercutindo nos resultados financeiros.</p>
+        <a href="#" class="btn-conhecer">CONHECER</a>
+      </div>
+
+      <!-- Serviço 6 -->
+      <div class="servico-card">
+        <h3>Consultoria em Recursos Humanos</h3>
+        <p>O consultor de RH auxilia a empresa na obtenção de melhores resultados, diagnosticando problemas e propondo soluções para otimizar a gestão de pessoas.</p>
+        <a href="#" class="btn-conhecer">CONHECER</a>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+
+
+<section class="cbt-metrica-section">
+    <h1 class="cbt-metrica-title">Na medida certa</h1>
+    <p class="cbt-metrica-desc">
+        Uma empresa que leva a sério seu trabalho.<br>
+        Conheça nossas soluções que são estruturadas para atuar conforme a necessidade da sua empresa. Não encontrou o serviço ideal? Conte mais sobre o que precisa e vamos prosperar juntos!
+    </p>
+    <h3 class="cbt-metrica-subtitle">CONHEÇA NOSSOS CLIENTES</h3>
+
+    <div class="cbt-metrica-stats">
+        <div class="cbt-metrica-stat">
+            <h2 data-target="12345">0</h2>
+            <p>Vagas Disponibilizadas</p>
+        </div>
+        <div class="cbt-metrica-stat">
+            <h2 data-target="1363">0</h2>
+            <p>Recrutamentos</p>
+        </div>
+        <div class="cbt-metrica-stat">
+            <h2 data-target="1234">0</h2>
+            <p>Clientes Atendidos</p>
+        </div>
+        <div class="cbt-metrica-stat">
+            <h2 data-target="550">0</h2>
+            <p>Analisados</p>
+        </div>
+    </div>
+</section>
+
+
+<section style="background-color: #1E7D4B; color: white; padding: 60px 20px; text-align: center; border-radius: 12px;">
+    <h2 style="font-size: 2rem; margin-bottom: 10px; font-weight: bold;">
+        Pronto para conversar?
+    </h2>
+    <p style="font-size: 1.2rem; margin-bottom: 5px;">
+        A CBT Consultoria quer ouvir suas necessidades
+    </p>
+    <p style="font-size: 1.2rem; margin-bottom: 30px;">
+        e apresentar a sua empresa a melhor solução.
+    </p>
+    <a href="#agendar-reuniao" 
+       style="background-color: white; color: #1E7D4B; padding: 15px 30px; 
+              text-decoration: none; font-weight: bold; border-radius: 8px;
+              font-size: 1.1rem; transition: background 0.3s ease;">
+        Agendar reunião
+    </a>
+</section>
+
+
 
   <!-- Footer -->
   <footer class="footer">
@@ -326,6 +575,42 @@ button[type="submit"]:hover {
     menuToggle.addEventListener('click', () => {
       nav.classList.toggle('active');
     });
+
+
+
+
+
+document.querySelectorAll('.cbt-metrica-stat h2[data-target]').forEach(counter => {
+    const speed = 100; // menor = mais rápido
+
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target / speed;
+
+        if (count < target) {
+            counter.innerText = Math.ceil(count + inc);
+            setTimeout(updateCount, 20);
+        } else {
+            counter.innerText = target.toLocaleString('pt-BR');
+        }
+    };
+
+    // Ativa quando aparece na tela
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                updateCount();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(counter);
+});
+
+
+
   </script>
 </body>
 </html>
