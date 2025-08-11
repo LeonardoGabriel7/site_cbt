@@ -121,11 +121,69 @@ body {
   background: #27ae60;
 }
 
+
+/* Empresas */
+.empresas-section {
+    padding: 50px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* margem lateral */
+}
+
+.empresas-texto h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.empresas-texto p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Slider */
+.empresas-slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.empresas-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+}
+
+.empresas-track img {
+    max-height: 60px;
+    margin: 0 30px;
+    object-fit: contain;
+}
+
+/* Animação infinita */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.empresas-track {
+    display: flex;
+    animation: scroll 7s linear infinite;
+}
+
+
 /* Sobre */
 .sobre {
   padding: 5rem 0;
   background: #f8f9fa;
 }
+
 
 .sobre-grid {
   display: grid;
@@ -309,47 +367,6 @@ body {
 }
 
 
-/* Contato */
-.contato {
-  padding: 4rem 0;
-  background: #fff;
-  text-align: center;
-}
-
-.contato h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-form {
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-input, textarea {
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-family: var(--fonte-principal);
-}
-
-button[type="submit"] {
-  background: var(--verde);
-  color: #fff;
-  border: none;
-  padding: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: background 0.3s;
-}
-
-button[type="submit"]:hover {
-  background: #27ae60;
-}
 
 /* Footer */
 .footer {
@@ -425,6 +442,68 @@ button[type="submit"]:hover {
       </div>
     </div>
   </section>
+
+<!-- SEÇÃO EMPRESAS -->
+<section class="empresas-section">
+    <div class="container">
+        <div class="empresas-texto">
+            <h2>Empresas de todos os tamanhos. De todos os tipos.</h2>
+            <p>Mais de <strong>100 clientes</strong>, De todo o País, confiam no CBT.</p>
+        </div>
+
+        <div class="empresas-slider">
+            <div class="empresas-track">
+                <!-- Repete os logos para efeito infinito -->
+                <img src="empresas/1.png" alt="Empresa 1">
+                <img src="empresas/2.png" alt="Empresa 2">
+                <img src="empresas/3.png" alt="Empresa 3">
+                <img src="empresas/4.png" alt="Empresa 4">
+                <img src="empresas/5.png" alt="Empresa 5">
+                <img src="empresas/6.png" alt="Empresa 6">
+                <img src="empresas/7.png" alt="Empresa 7">
+                <img src="empresas/8.png" alt="Empresa 8">
+                <img src="empresas/9.png" alt="Empresa 9">
+                <img src="empresas/10.png" alt="Empresa 10">
+                <img src="empresas/11.png" alt="Empresa 11">
+                <img src="empresas/12.png" alt="Empresa 12">
+                <img src="empresas/13.png" alt="Empresa 13">
+                <img src="empresas/14.png" alt="Empresa 14">
+                <img src="empresas/15.png" alt="Empresa 15">
+                <img src="empresas/16.png" alt="Empresa 16">
+                <img src="empresas/17.png" alt="Empresa 17">
+                <img src="empresas/18.png" alt="Empresa 18">
+                <img src="empresas/19.png" alt="Empresa 19">
+                <img src="empresas/20.png" alt="Empresa 20">
+
+                <!-- DUPLICADO para efeito de looping -->
+                <img src="empresas/1.png" alt="Empresa 1">
+                <img src="empresas/2.png" alt="Empresa 2">
+                <img src="empresas/3.png" alt="Empresa 3">
+                <img src="empresas/4.png" alt="Empresa 4">
+                <img src="empresas/5.png" alt="Empresa 5">
+                <img src="empresas/6.png" alt="Empresa 6">
+                <img src="empresas/7.png" alt="Empresa 7">
+                <img src="empresas/8.png" alt="Empresa 8">
+                <img src="empresas/9.png" alt="Empresa 9">
+                <img src="empresas/10.png" alt="Empresa 10">
+                <img src="empresas/11.png" alt="Empresa 11">
+                <img src="empresas/12.png" alt="Empresa 12">
+                <img src="empresas/13.png" alt="Empresa 13">
+                <img src="empresas/14.png" alt="Empresa 14">
+                <img src="empresas/15.png" alt="Empresa 15">
+                <img src="empresas/16.png" alt="Empresa 16">
+                <img src="empresas/17.png" alt="Empresa 17">
+                <img src="empresas/18.png" alt="Empresa 18">
+                <img src="empresas/19.png" alt="Empresa 19">
+                <img src="empresas/20.png" alt="Empresa 20">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
 
   <!-- Sobre Nós -->
 <section class="sobre" id="sobre">
@@ -510,7 +589,7 @@ button[type="submit"]:hover {
   </div>
 </section>
 
-
+<!-- Na medida certa -->
 
 <section class="cbt-metrica-section">
     <h1 class="cbt-metrica-title">Na medida certa</h1>
@@ -540,6 +619,8 @@ button[type="submit"]:hover {
     </div>
 </section>
 
+
+<!-- Pronto para conversar? -->
 
 <section style="background-color: #1E7D4B; color: white; padding: 60px 20px; text-align: center; border-radius: 12px;">
     <h2 style="font-size: 2rem; margin-bottom: 10px; font-weight: bold;">
