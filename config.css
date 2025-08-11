@@ -1,0 +1,26 @@
+ /*
+  CBT Recursos Humanos - CSS
+  Inspirado no layout da Solides
+  Cores: branco, verde e preto
+*/
+
+:root {
+  --verde: #2ecc71;
+  --preto: #222;
+  --cinza-claro: #f8f9fa;
+  --cinza-escuro: #444;
+  --fonte-principal: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  color: var(--preto);
+  background-color: #fff;
+  line-height: 1.6;
+}

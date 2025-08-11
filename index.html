@@ -8,440 +8,43 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-    /*
-  CBT Recursos Humanos - CSS
-  Inspirado no layout da Solides
-  Cores: branco, verde e preto
-*/
+  <link rel="stylesheet" href="config.css">
+  <link rel="stylesheet" href="principal.css">
 
-:root {
-  --verde: #2ecc71;
-  --preto: #222;
-  --cinza-claro: #f8f9fa;
-  --cinza-escuro: #444;
-  --fonte-principal: 'Inter', sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--fonte-principal);
-  color: var(--preto);
-  background-color: #fff;
-  line-height: 1.6;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Header */
-.header {
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--verde);
-}
-
-.nav ul {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-}
-
-.nav a {
-  text-decoration: none;
-  color: var(--preto);
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.nav a:hover {
-  color: var(--verde);
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--preto);
-}
-
-/* Hero Section */
-.hero {
-  background: var(--cinza-claro);
-  padding: 6rem 0;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.btn {
-  background: var(--verde);
-  color: #fff;
-  padding: 0.8rem 2rem;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background: #27ae60;
-}
-
-
-/* Empresas */
-.empresas-section {
-    padding: 50px 0;
-    background: #fff;
-    text-align: center;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px; /* margem lateral */
-}
-
-.empresas-texto h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.empresas-texto p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-/* Slider */
-.empresas-slider {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
-.empresas-track {
-    display: flex;
-    animation: scroll 40s linear infinite;
-}
-
-.empresas-track img {
-    max-height: 60px;
-    margin: 0 30px;
-    object-fit: contain;
-}
-
-/* Animação infinita */
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-.empresas-track {
-    display: flex;
-    animation: scroll 7s linear infinite;
-}
-
-
-/* Sobre */
-.sobre {
-  padding: 5rem 0;
-  background: #f8f9fa;
-}
-
-
-.sobre-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.sobre-texto h2 {
-  font-size: 2.5rem;
-  color: var(--verde-principal, #1e7e34);
-  margin-bottom: 1.5rem;
-}
-
-.sobre-texto p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--cinza-escuro, #444);
-  margin-bottom: 1.2rem;
-}
-
-.sobre-imagem img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
-}
-
-.sobre-imagem img:hover {
-  transform: scale(1.03);
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .sobre-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
-  .sobre-imagem {
-    order: -1;
-  }
-}
-
-
-
-/* Serviços */
-.servicos {
-  padding: 5rem 0;
-  background: #fff;
-  text-align: center;
-}
-
-.servicos h2 {
-  font-size: 2.5rem;
-  color: var(--verde-principal, #1e7e34);
-}
-
-.servicos .subtitulo {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 3rem;
-}
-
-.servicos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.servico-card {
-  background: #f8f9fa;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.servico-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-}
-
-.servico-card h3 {
-  font-size: 1.3rem;
-  color: var(--verde-principal, #1e7e34);
-  margin-bottom: 1rem;
-}
-
-.servico-card p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.btn-conhecer {
-  background: var(--verde-principal, #1e7e34);
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-  align-self: flex-start;
-}
-
-.btn-conhecer:hover {
-  background: #155d27;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .servico-card {
-    text-align: left;
-  }
-}
-
-
-
-
-
-
-/* ===== SEÇÃO NA MEDIDA CERTA ===== */
-.cbt-metrica-section {
-    font-family: Arial, sans-serif;
-    background: #fff;
-    color: #222;
-    text-align: center;
-    padding: 60px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-.cbt-metrica-title {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-.cbt-metrica-desc {
-    font-size: 1.2rem;
-    color: #555;
-    max-width: 700px;
-    margin: 10px auto 30px;
-}
-.cbt-metrica-subtitle {
-    font-size: 1.3rem;
-    color: #000;
-    margin-bottom: 20px;
-}
-.cbt-metrica-stats {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-}
-.cbt-metrica-stat {
-    background: #f7f7f7;
-    padding: 20px;
-    border-radius: 12px;
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.cbt-metrica-stat h2 {
-    font-size: 2rem;
-    color: #00a859;
-    margin: 0;
-}
-.cbt-metrica-stat p {
-    font-size: 1rem;
-    color: #333;
-    margin: 5px 0 0;
-}
-@media(max-width: 600px){
-    .cbt-metrica-stat {
-        width: 100%;
-    }
-}
-
-
-
-/* Footer */
-.footer {
-  background: var(--preto);
-  color: #fff;
-  text-align: center;
-  padding: 2rem 0;
-  font-size: 0.9rem;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .nav {
-    display: none;
-    flex-direction: column;
-    background: #fff;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    border-top: 1px solid #eee;
-    padding: 1rem 0;
-  }
-
-  .nav.active {
-    display: flex;
-  }
-
-  .nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-
-
-
-
-</style>
-
+<script defer src="script.js"></script>
 </head>
 <body>
-
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="logo">CBT</div>
-      <nav class="nav">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Empresa</a></li>
-          <li><a href="#">Serviços</a></li>
-          <li><a href="#">Estágios</a></li>
-          <li><a href="#">Jovem Aprendiz</a></li>
-        </ul>
-      </nav>
-      <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
-    </div>
-  </header>
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <a href="#" class="logo">
+      <img src="empresas/logo.png" alt="CBT Logo" />
+    </a>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Empresa</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Estágios</a></li>
+        <li><a href="#">Jovem Aprendiz</a></li>
+      </ul>
+      <button class="btn-agendar-mobile">Agendar Reunião</button>
+    </nav>
+    <button class="btn-agendar">Agendar Reunião</button>
+    <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+  </div>
+</header
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Transformando Potenciais em Resultados</h1>
-        <p>Consultoria especializada em Recursos Humanos</p>
-        <a href="#" class="btn">Fale Conosco</a>
-      </div>
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Transformando <span>Potenciais</span> em Resultados</h1>
+      <p>Consultoria especializada em Recursos Humanos</p>
+      <a href="#" class="btn">Fale Conosco</a>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- SEÇÃO EMPRESAS -->
 <section class="empresas-section">
@@ -505,142 +108,175 @@ body {
 
 
 
-  <!-- Sobre Nós -->
-<section class="sobre" id="sobre">
-  <div class="container sobre-grid">
-    <div class="sobre-texto">
-      <h2>Seja Bem-Vindo!</h2>
-      <p>
-        CBT – Consultoria, Benefícios e Treinamento, é uma empresa ágil, moderna e integradora.
-      </p>
-      <p>
-        Toda empresa necessita de bons profissionais de Recursos Humanos, que saibam como lidar com pessoas e como desenvolvê-las. 
-        Afinal, é comum que existam conflitos internos e também um alto índice de absenteísmo e rotatividade em empresas que não investem na equipe.
-      </p>
-      <p>
-        Porém, nem todas as empresas possuem capacidade financeira para manter uma equipe interna. 
-        Para isso, existem as consultorias de RH, que geralmente contam com profissionais especialistas em Gestão de Pessoas.
-      </p>
-      <p>
-        A consultoria pode trabalhar nos vários subsistemas de RH: Recrutamento e Seleção, Treinamento e Desenvolvimento, 
-        integração de novos colaboradores e trabalhos como pesquisa de clima e avaliação de desempenho.
-      </p>
-      <p>
-        Com uma boa consultoria, a empresa pode otimizar seu processo de recrutamento e até de gestão.
-      </p>
-    </div>
-    <div class="sobre-imagem">
-      <img src="e244ed72-00a1-42e9-97c8-7ac81c0dc3de.png" alt="Equipe CBT Recursos Humanos">
+<!-- - Sobre Nós -->
+<section class="sobre-final" id="sobre">
+  <div class="container">
+    <div class="sobre-final-grid">
+      <!-- Parte Esquerda -->
+      <div class="sobre-final-texto">
+        <span class="badge-final">CONSULTORIA ESPECIALIZADA</span>
+        <h2>Soluções inteligentes para <span class="text-green">Gestão de Pessoas</span></h2>
+        
+        <p class="destaque-final">Processos antes complexos e demorados são otimizados com nossas metodologias especializadas</p>
+
+        <ul class="lista-final">
+          <li><span class="check-green">✓</span> Recrutamento e Seleção estratégica</li>
+          <li><span class="check-green">✓</span> Treinamento e Desenvolvimento contínuo</li>
+          <li><span class="check-green">✓</span> Pesquisa de clima organizacional</li>
+          <li><span class="check-green">✓</span> Análise de desempenho e potencial</li>
+          <li><span class="check-green">✓</span> Integração de novos colaboradores</li>
+        </ul>
+      </div>
+
+      <!-- Parte Direita (apenas imagem) -->
+      <div class="sobre-final-imagem">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Equipe CBT trabalhando">
+      </div>
     </div>
   </div>
 </section>
 
-  <!-- Serviços -->
-<section class="servicos" id="servicos">
+<!-- Serviços - Versão Profissional Compacta -->
+<section class="servicos-pro" id="servicos">
   <div class="container">
-    <h2>CBT - Recursos Humanos</h2>
-    <p class="subtitulo">Nossos Serviços</p>
+    <div class="servicos-header">
+      <span class="section-tag">NOSSAS SOLUÇÕES</span>
+      <h2 class="section-title">Serviços de RH <span class="text-green">Estratégicos</span></h2>
+    </div>
 
     <div class="servicos-grid">
-
       <!-- Serviço 1 -->
       <div class="servico-card">
-        <h3>Recrutamento e seleção por competência</h3>
-        <p>O recrutamento e seleção por competências é uma metodologia que tem como objetivo encontrar candidatos que atendam a um conjunto de competências necessárias para ocupar um cargo específico.</p>
-        <a href="#" class="btn-conhecer">CONHECER</a>
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="#1e7e34" stroke-width="2"/>
+            <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="#1e7e34" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Recrutamento e Seleção</h3>
+        <p>Metodologia focada em competências específicas para cada cargo.</p>
       </div>
 
       <!-- Serviço 2 -->
       <div class="servico-card">
-        <h3>Gestão de Pessoas RH Estratégico</h3>
-        <p>A gestão estratégica de RH é um modelo de trabalho que se diferencia dos métodos tradicionais. Nela a coordenação é feita de forma proativa, buscando soluções para suprir necessidades da empresa antes que elas apareçam.</p>
-        <a href="#" class="btn-conhecer">CONHECER</a>
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#1e7e34" stroke-width="2"/>
+            <path d="M12 6V12L16 14" stroke="#1e7e34" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>RH Estratégico</h3>
+        <p>Gestão proativa que antecipa necessidades organizacionais.</p>
       </div>
 
       <!-- Serviço 3 -->
       <div class="servico-card">
-        <h3>Terceirização Folha de pagamento</h3>
-        <p>Ao terceirizar a folha de pagamento, você transfere para uma equipe especializada todos os cálculos referentes aos vencimentos dos colaboradores e demais processos relacionados.</p>
-        <a href="#" class="btn-conhecer">CONHECER</a>
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 7V3M16 7V3M7 11H17M5 21H19C20.1046 21 21 20.1046 21 19V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V19C3 20.1046 3.89543 21 5 21Z" stroke="#1e7e34" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Terceirização de Folha</h3>
+        <p>Cálculos de vencimentos realizados por especialistas.</p>
       </div>
 
       <!-- Serviço 4 -->
       <div class="servico-card">
-        <h3>Cargos e Salário por competência</h3>
-        <p>A remuneração por competência é uma forma de garantir que o funcionário receba um incentivo pelos serviços prestados, podendo ocorrer semanalmente, trimestral ou mensalmente.</p>
-        <a href="#" class="btn-conhecer">CONHECER</a>
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="#1e7e34" stroke-width="2"/>
+            <path d="M19.4 15C19.2669 15.3016 19.227 15.6363 19.2849 15.9606C19.3427 16.2849 19.4959 16.5816 19.72 16.81L19.79 16.88C19.9765 17.0665 20.1232 17.2882 20.2211 17.5319C20.319 17.7756 20.3661 18.0364 20.36 18.3C20.36 19.26 19.53 20.09 18.57 20.09H17.64" stroke="#1e7e34" stroke-width="2" stroke-linecap="round"/>
+            <path d="M5.40997 20C4.44997 20 3.61997 19.17 3.61997 18.21C3.61997 17.9428 3.66783 17.6785 3.77064 17.4327C3.87345 17.1869 4.02903 16.965 4.22797 16.78L4.35997 16.66C4.59087 16.4236 4.74644 16.1172 4.80317 15.7819C4.8599 15.4466 4.81482 15.1002 4.67497 14.79" stroke="#1e7e34" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4.35997 7.33L4.29997 7.25C4.1049 7.04754 3.96996 6.79488 3.91002 6.52072C3.85008 6.24656 3.86756 5.96196 3.96097 5.697C4.05438 5.43204 4.21996 5.19776 4.43897 5.02" stroke="#1e7e34" stroke-width="2" stroke-linecap="round"/>
+            <path d="M19.63 5.02C19.8434 5.19634 20.0044 5.428 20.0951 5.68992C20.1858 5.95184 20.2026 6.23351 20.1437 6.5045C20.0847 6.77549 19.9524 7.025 19.761 7.224L19.65 7.33" stroke="#1e7e34" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Cargos e Salários</h3>
+        <p>Estrutura de remuneração por competência.</p>
       </div>
 
       <!-- Serviço 5 -->
       <div class="servico-card">
-        <h3>Pesquisa de Clima Organizacional</h3>
-        <p>A pesquisa de clima organizacional ajuda a promover mudanças internas, melhorando o ambiente de trabalho e repercutindo nos resultados financeiros.</p>
-        <a href="#" class="btn-conhecer">CONHECER</a>
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 10H17M7 14H12M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#1e7e34" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Clima Organizacional</h3>
+        <p>Diagnóstico do ambiente de trabalho corporativo.</p>
       </div>
 
       <!-- Serviço 6 -->
       <div class="servico-card">
-        <h3>Consultoria em Recursos Humanos</h3>
-        <p>O consultor de RH auxilia a empresa na obtenção de melhores resultados, diagnosticando problemas e propondo soluções para otimizar a gestão de pessoas.</p>
-        <a href="#" class="btn-conhecer">CONHECER</a>
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#1e7e34" stroke-width="2"/>
+            <path d="M17 17C17 14.7909 14.7614 13 12 13C9.23858 13 7 14.7909 7 17" stroke="#1e7e34" stroke-width="2" stroke-linecap="round"/>
+            <path d="M3 5H21" stroke="#1e7e34" stroke-width="2" stroke-linecap="round"/>
+            <path d="M3 19H21" stroke="#1e7e34" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Consultoria em RH</h3>
+        <p>Soluções personalizadas para gestão de pessoas.</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- Na medida certa -->
-
-<section class="cbt-metrica-section">
-    <h1 class="cbt-metrica-title">Na medida certa</h1>
-    <p class="cbt-metrica-desc">
-        Uma empresa que leva a sério seu trabalho.<br>
-        Conheça nossas soluções que são estruturadas para atuar conforme a necessidade da sua empresa. Não encontrou o serviço ideal? Conte mais sobre o que precisa e vamos prosperar juntos!
-    </p>
-    <h3 class="cbt-metrica-subtitle">CONHEÇA NOSSOS CLIENTES</h3>
-
-    <div class="cbt-metrica-stats">
-        <div class="cbt-metrica-stat">
-            <h2 data-target="12345">0</h2>
-            <p>Vagas Disponibilizadas</p>
-        </div>
-        <div class="cbt-metrica-stat">
-            <h2 data-target="1363">0</h2>
-            <p>Recrutamentos</p>
-        </div>
-        <div class="cbt-metrica-stat">
-            <h2 data-target="1234">0</h2>
-            <p>Clientes Atendidos</p>
-        </div>
-        <div class="cbt-metrica-stat">
-            <h2 data-target="550">0</h2>
-            <p>Analisados</p>
-        </div>
+<!-- Seção Métricas - Versão Ajustada -->
+<section class="metrics-final">
+  <div class="container">
+    <div class="metrics-header">
+      <span class="metrics-tag">EFICIÊNCIA COMPROVADA</span>
+      <h2 class="metrics-title">Resultados que <span class="text-green">fazem diferença</span></h2>
+      <p class="metrics-desc">
+        Uma empresa que leva a sério seu trabalho. Conheça nossas soluções estruturadas para atender 
+        sua necessidade. Não encontrou o serviço ideal? Conte-nos sua demanda e vamos prosperar juntos!
+      </p>
     </div>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-number" data-target="12345">0</div>
+        <div class="metric-label">Vagas Disponibilizadas</div>
+      </div>
+      
+      <div class="metric-card">
+        <div class="metric-number" data-target="1363">0</div>
+        <div class="metric-label">Recrutamentos</div>
+      </div>
+      
+      <div class="metric-card">
+        <div class="metric-number" data-target="1234">0</div>
+        <div class="metric-label">Clientes Atendidos</div>
+      </div>
+      
+      <div class="metric-card">
+        <div class="metric-number" data-target="550">0</div>
+        <div class="metric-label">Analisados</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 
-<!-- Pronto para conversar? -->
-
-<section style="background-color: #1E7D4B; color: white; padding: 60px 20px; text-align: center; border-radius: 12px;">
-    <h2 style="font-size: 2rem; margin-bottom: 10px; font-weight: bold;">
-        Pronto para conversar?
-    </h2>
-    <p style="font-size: 1.2rem; margin-bottom: 5px;">
-        A CBT Consultoria quer ouvir suas necessidades
-    </p>
-    <p style="font-size: 1.2rem; margin-bottom: 30px;">
-        e apresentar a sua empresa a melhor solução.
-    </p>
-    <a href="#agendar-reuniao" 
-       style="background-color: white; color: #1E7D4B; padding: 15px 30px; 
-              text-decoration: none; font-weight: bold; border-radius: 8px;
-              font-size: 1.1rem; transition: background 0.3s ease;">
-        Agendar reunião
-    </a>
-</section>
-
-
+<!-- Seção CTA Elegante -->
+<div class="cta-elegant-wrapper">
+  <section class="cta-elegant">
+    <div class="cta-elegant-content">
+      <div class="cta-text-group">
+        <h2 class="cta-elegant-title">Pronto para conversar?</h2>
+        <p class="cta-elegant-text">A CBT tem a solução ideal para sua empresa</p>
+      </div>
+      <a href="#agendar-reuniao" class="cta-elegant-button">
+        Agendar agora
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+</div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -649,49 +285,8 @@ body {
     </div>
   </footer>
 
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
-
-    menuToggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
 
 
 
-
-
-document.querySelectorAll('.cbt-metrica-stat h2[data-target]').forEach(counter => {
-    const speed = 100; // menor = mais rápido
-
-    const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const inc = target / speed;
-
-        if (count < target) {
-            counter.innerText = Math.ceil(count + inc);
-            setTimeout(updateCount, 20);
-        } else {
-            counter.innerText = target.toLocaleString('pt-BR');
-        }
-    };
-
-    // Ativa quando aparece na tela
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                updateCount();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    observer.observe(counter);
-});
-
-
-
-  </script>
 </body>
 </html>
