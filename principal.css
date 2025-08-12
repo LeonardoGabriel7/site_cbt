@@ -7,31 +7,22 @@
   margin: 0 auto;
 }
 
-/* Header */
-/* Variáveis (caso não tenha, defina) */
-:root {
-  --verde: #28a745; /* verde padrão */
-  --preto: #222;
-  --branco: #fff;
-}
 
 /* Header */
-/* Reset básico para ul e li */
+
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* Header */
-/* Reset básico para ul e li */
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* Header */
+
 .header {
   background: var(--branco);
   border-bottom: 1px solid #ddd;
@@ -116,7 +107,7 @@ ul {
 /* Botão agendar desktop */
 .btn-agendar {
   background-color: var(--verde);
-  color: var(--branco);
+  color: white;
   border: none;
   padding: 0.6rem 1.2rem;
   font-weight: 600;
@@ -396,7 +387,7 @@ ul {
 .badge-final {
   display: inline-block;
   background: #f0f7f0;
-  color: #1e7e34;
+  color: var(--verde);
   padding: 0.4rem 0.8rem;
   border-radius: 4px;
   font-size: 0.8rem;
@@ -414,7 +405,7 @@ ul {
 }
 
 .text-green {
-  color: #1e7e34;
+  color: var(--verde);
 }
 
 .destaque-final {
@@ -441,7 +432,7 @@ ul {
 }
 
 .check-green {
-  color: #1e7e34;
+  color: var(--verde);
   font-weight: bold;
 }
 
@@ -495,7 +486,7 @@ ul {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 1px;
-  color: #1e7e34;
+  color: var(--verde);
   background: #e8f5e9;
   padding: 0.4rem 0.8rem;
   border-radius: 50px;
@@ -511,7 +502,7 @@ ul {
 }
 
 .text-green {
-  color: #1e7e34;
+  color: var(--verde);
 }
 
 .servicos-grid {
@@ -544,7 +535,7 @@ ul {
   left: 0;
   width: 3px;
   height: 0;
-  background: #1e7e34;
+  background: var(--verde);
   transition: height 0.3s ease;
 }
 
@@ -630,7 +621,7 @@ ul {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 1px;
-  color: #1e7e34;
+  color: var(--verde);
   background: #e8f5e9;
   padding: 0.5rem 1rem;
   border-radius: 50px;
@@ -647,7 +638,7 @@ ul {
 }
 
 .text-green {
-  color: #1e7e34;
+  color: var(--verde);
 }
 
 .metrics-desc {
@@ -677,7 +668,7 @@ ul {
 .metric-number {
   font-size: 2.3rem;
   font-weight: 700;
-  color: #1e7e34;
+  color: var(--verde);
   line-height: 1;
   margin-bottom: 0.5rem;
   font-feature-settings: "tnum";
@@ -722,7 +713,7 @@ ul {
 }
 
 .cta-final {
-  background: #1E7D4B;
+  background: var(--verde);
   color: white;
   padding: 1.5rem 1rem;
   text-align: center;
@@ -750,17 +741,17 @@ ul {
   opacity: 0.9;
 }
 
-/* Estilo do Botão Ajustado */
-.cta-btn-final {
+/* Botão Ajustado */
+.cta-btn-final2 {
   display: inline-block;
   background: white;
-  color: #1E7D4B;
-  padding: 0.5rem 1.5rem;
+  color: var(--verde);
+  padding: 0.5rem 1.2rem; /* padding mais equilibrado */
   text-decoration: none;
   font-weight: 600;
   border-radius: 4px;
   font-size: 0.9rem;
-  min-width: 160px; /* Largura mínima garantida */
+  min-width: auto; /* remove largura fixa */
   text-align: center;
   transition: background 0.2s ease;
   border: 1px solid rgba(0,0,0,0.05);
@@ -774,13 +765,11 @@ ul {
 /* Responsivo */
 @media (max-width: 480px) {
   .cta-btn-final {
-    padding: 0.5rem 1.2rem;
-    min-width: 140px;
+    padding: 0.4rem 1rem;
     font-size: 0.85rem;
   }
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
   .cta-final {
     padding: 1.2rem 1rem;
@@ -795,6 +784,168 @@ ul {
   }
 }
 
+
+
+
+
+/* Estilos para a Seção de Contatos */
+.contact-section {
+  padding: 3rem 0;
+  background: var(--cinza-claro);
+  font-family: var(--fonte-principal);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.contact-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.contact-info-left {
+  flex: 1;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--preto);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--cinza-escuro);
+}
+
+.contact-logo-right {
+  margin-left: 2rem;
+}
+
+.logo-img {
+  max-height: 100px;
+  width: auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.contact-header {
+  margin-bottom: 1.5rem;
+}
+
+.contact-badge {
+  display: inline-block;
+  background: var(--verde);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.contact-title {
+  font-size: 1.5rem;
+  color: var(--preto);
+  margin: 0;
+}
+
+.contact-info {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.contact-text {
+  font-size: 1rem;
+  color: var(--cinza-escuro);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: var(--verde);
+}
+
+.social-link:hover svg {
+  stroke: white;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contact-header-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .contact-logo-right {
+    margin: 1.5rem 0 0 0;
+    align-self: center;
+  }
+  
+  .section-title {
+    font-size: 1.7rem;
+  }
+  
+  .contact-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .logo-img {
+    max-height: 80px;
+  }
+}
 
 
 
