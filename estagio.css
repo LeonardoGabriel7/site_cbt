@@ -1,0 +1,650 @@
+/* Header - VERSÃO CORRIGIDA */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+    /* Força o fundo branco sempre */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* Remove qualquer transparência no scroll */
+.header.scrolled {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background-color: #ffffff !important;
+}
+
+/* Logo */
+.logo img {
+    max-height: 63px;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu toggle - hamburger */
+.menu-toggle {
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--preto);
+    display: none;
+    z-index: 1100;
+    padding: 0.5rem;
+}
+
+/* Nav */
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Links do menu */
+.nav a {
+    position: relative;
+    text-decoration: none;
+    color: var(--preto);
+    font-weight: 600;
+    padding-bottom: 4px;
+    transition: color 0.3s;
+}
+
+/* Linha verde embaixo no hover */
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--verde);
+    transition: width 0.3s;
+}
+
+.nav a:hover, .nav a:focus {
+    color: var(--verde);
+}
+
+.nav a:hover::after, .nav a:focus::after {
+    width: 100%;
+}
+
+/* Botão agendar desktop */
+.btn-agendar {
+    background-color: var(--verde);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.btn-agendar:hover, .btn-agendar:focus {
+    background-color: var(--verde-escuro);
+    outline: none;
+}
+
+/* Botão agendar mobile */
+.btn-agendar-mobile {
+    background-color: var(--verde);
+    color: var(--branco);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 1rem;
+    display: none;
+}
+
+.btn-agendar-mobile:hover, .btn-agendar-mobile:focus {
+    background-color: var(--verde-escuro);
+    outline: none;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: #ffffff !important;
+        height: 100vh;
+        width: 250px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        flex-direction: column;
+        padding: 4rem 1.5rem 1.5rem;
+        box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+    }
+    
+    .nav.nav-open {
+        transform: translateX(0);
+    }
+    
+    .nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    
+    .nav a {
+        font-size: 1.1rem;
+        padding: 0.5rem 0;
+        display: block;
+    }
+    
+    .btn-agendar {
+        display: none;
+    }
+    
+    .btn-agendar-mobile {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* estilos.css - Seção Estágios */
+
+.hero-estagios-clean {
+  position: relative;
+  background: #f9fbfa;
+  padding: 80px 20px;
+  text-align: center;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  
+}
+
+/* Círculos de fundo */
+.hero-estagios-clean::before,
+.hero-estagios-clean::after {
+  content: '';
+  position: absolute;
+  background: rgba(46, 204, 113, 0.15);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.hero-estagios-clean::before {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -100px;
+}
+
+.hero-estagios-clean::after {
+  width: 250px;
+  height: 250px;
+  bottom: -80px;
+  right: -80px;
+}
+
+.hero-estagios-clean .container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-estagios-clean h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--preto);
+  margin-bottom: 15px;
+}
+
+.hero-estagios-clean p {
+  font-size: 1.2rem;
+  color: var(--cinza-texto);
+  line-height: 1.6;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero-estagios-clean {
+    padding: 60px 15px;
+  }
+  .hero-estagios-clean h1 {
+    font-size: 2rem;
+  }
+  .hero-estagios-clean p {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+/* Serviços Estágios */
+.servicos-estagios {
+    padding: 80px 0;
+    background-color: var(--branco);
+}
+
+.servico-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.servico-text h2 {
+    font-size: 2rem;
+    color: var(--preto);
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.servico-text h2:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--verde);
+    margin: 15px 0;
+}
+
+.servico-text p {
+    font-size: 1.1rem;
+    color: var(--cinza-escuro);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.servico-image {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.servico-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.servico-image:hover img {
+    transform: scale(1.03);
+}
+
+.vantagens-section {
+  font-family: 'Inter', sans-serif;
+  background: var(--fundo-claro);
+  padding: 80px 20px;
+}
+
+.vantagens-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.vantagem-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vantagem-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.vantagem-card h3 {
+  color: var(--preto);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.vantagem-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vantagem-card li {
+  margin-bottom: 15px;
+  padding-left: 28px;
+  position: relative;
+  color: var(--cinza-texto);
+  line-height: 1.6;
+}
+
+.vantagem-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--verde);
+  font-weight: bold;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .vantagens-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CTA Estágios */
+.cta-estagios {
+    padding: 80px 0;
+    background-color: var(--verde);
+    color: white;
+    text-align: center;
+}
+
+.cta-estagios h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: white;
+    color: var(--verde);
+    padding: 15px 40px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: rgba(255,255,255,0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    .servico-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .servico-image {
+        order: -1;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .vantagens-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-estagios {
+        padding: 80px 0;
+    }
+    
+    .hero-estagios h1 {
+        font-size: 2.5rem;
+    }
+    
+    .servicos-estagios,
+    .vantagens-section,
+    .cta-estagios {
+        padding: 60px 0;
+    }
+    
+    .cta-estagios h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-estagios h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-estagios .hero-text {
+        font-size: 1.1rem;
+    }
+    
+    .servico-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .btn-saiba-mais,
+    .btn-cta {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+
+
+/* Seção de Contatos estilo footer */
+.contact-footer {
+  background: var(--cinza-claro);
+  padding: 2rem 0;
+  font-family: var(--fonte-principal);
+}
+
+.contact-footer .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem; /* menos espaço que antes */
+}
+
+/* Coluna Esquerda */
+.footer-left {
+  flex: 1.3; /* um pouco maior que a direita */
+}
+
+.footer-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.contact-badge {
+  display: inline-block;
+  background: var(--verde);
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contact-title {
+  font-size: 1.2rem;
+  color: var(--preto);
+  margin: 0 0 1rem;
+}
+
+.contact-info {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.contact-text {
+  font-size: 0.95rem;
+  color: var(--cinza-escuro);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: var(--verde);
+}
+
+.social-link:hover svg {
+  stroke: white;
+}
+
+/* Coluna Direita */
+.footer-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-img {
+  max-height: 380px;
+  width: auto;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contact-footer .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-left {
+    flex: unset;
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Footer */
+.footer {
+  background: var(--preto);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    border-top: 1px solid #eee;
+    padding: 1rem 0;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}

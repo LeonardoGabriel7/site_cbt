@@ -661,6 +661,8 @@ ul {
   margin-bottom: 0.5rem;
   font-feature-settings: "tnum";
   font-variant-numeric: tabular-nums;
+
+  
 }
 
 .metric-label {
