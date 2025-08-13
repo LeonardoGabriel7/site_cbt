@@ -1,0 +1,65 @@
+:root {
+  --verde: #2ecc71;
+  --preto: #222;
+  --cinza-claro: #f8f9fa;
+  --cinza-escuro: #444;
+  --fonte-principal: 'Inter', sans-serif;
+}
+
+/* Reset e estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--fonte-principal);
+}
+
+body {
+  font-family: var(--fonte-principal);
+  color: var(--preto);
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/* Seção Trabalhe Conosco */
+.trabalhe-conosco {
+  background-color: var(--cinza-claro);
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.trabalhe-conosco .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.trabalhe-conosco h2 {
+  font-size: 2rem;
+  color: var(--verde);
+  margin-bottom: 1.5rem;
+}
+
+.trabalhe-conosco p {
+  font-size: 1.1rem;
+  color: var(--cinza-escuro);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Botão */
+.btn-cadastrar {
+  background-color: var(--verde);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.btn-cadastrar:hover {
+  background-color: #27ae60;
+}
