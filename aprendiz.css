@@ -1,5 +1,11 @@
 
-
+:root {
+  --verde: #2ecc71;
+  --preto: #222;
+  --cinza-claro: #f8f9fa;
+  --cinza-escuro: #444;
+  --fonte-principal: 'Inter', sans-serif;
+}
 
 
 
@@ -84,120 +90,69 @@
 
 
 
- .jovem-aprendiz-section {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 80px 20px;
-            position: relative;
-        }
+.jovem-aprendiz-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: white;
+    font-family: var(--fonte-principal);
+}
 
-        .jovem-aprendiz-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100vw;
-            height: 100%;
-            background-color: var(--verde-claro);
-            z-index: -1;
-            clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
-        }
+.jovem-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-        .jovem-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+.jovem-tag {
+    font-size: 0.9rem;
+    color: var(--verde);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
 
-        .jovem-tag {
-            font-size: 1rem;
-            color: var(--verde);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            display: block;
-        }
+.jovem-title {
+    font-size: 1.8rem;
+    color: var(--preto);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
 
-        .jovem-title {
-            font-size: 2.2rem;
-            color: var(--preto);
-            margin-bottom: 10px;
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-        }
+.jovem-subtitle {
+    font-size: 1.2rem;
+    color: var(--verde);
+    font-weight: 600;
+}
 
-        .jovem-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background-color: var(--verde);
-        }
+.jovem-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
 
-        .jovem-subtitle {
-            font-size: 1.5rem;
-            color: var(--verde);
-            font-weight: 600;
-            margin-top: 20px;
-        }
+.jovem-text {
+    font-size: 1rem;
+    color: var(--cinza-escuro);
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: center;
+}
 
-        .jovem-content {
-            background-color: var(--branco);
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: var(--sombra);
-        }
-
-        .jovem-text {
-            font-size: 1.1rem;
-            color: var(--cinza-escuro);
-            margin-bottom: 25px;
-            line-height: 1.8;
-        }
-
-        .jovem-cta {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .jovem-btn {
-            display: inline-block;
-            background-color: var(--verde);
-            color: var(--branco);
-            padding: 15px 40px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 168, 89, 0.2);
-        }
-
-        .jovem-btn:hover {
-            background-color: var(--verde-escuro);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(0, 168, 89, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .jovem-aprendiz-section {
-                padding: 60px 20px;
-            }
-            
-            .jovem-title {
-                font-size: 1.8rem;
-            }
-            
-            .jovem-subtitle {
-                font-size: 1.3rem;
-            }
-            
-            .jovem-content {
-                padding: 30px 20px;
-            }
-        }
+@media (max-width: 768px) {
+    .jovem-aprendiz-section {
+        padding: 30px 15px;
+    }
+    
+    .jovem-title {
+        font-size: 1.5rem;
+    }
+    
+    .jovem-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .jovem-text {
+        text-align: left;
+    }
+}
