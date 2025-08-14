@@ -325,38 +325,63 @@ ul {
     transform: scale(1.03);
 }
 
+
+
+
+
+
+/* Seção Vantagens - Versão Compacta */
 .vantagens-section {
-  font-family: 'Inter', sans-serif;
-  background: var(--fundo-claro);
-  padding: 80px 20px;
+  background: var(--branco);
+  padding: 30px 0; /* Espaçamento superior reduzido */
+
+  margin-top: -80px;
+}
+
+.container {
+  max-width: 1000px; /* Largura máxima reduzida */
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .vantagens-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cards mais estreitos */
+  gap: 20px; /* Espaço entre cards reduzido */
 }
 
 .vantagem-card {
   background: white;
-  border-radius: 16px;
-  padding: 40px 30px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  padding: 25px; /* Padding interno reduzido */
+  box-shadow: 0 3px 10px rgba(46, 204, 113, 0.1);
+  border: 1px solid rgb(46, 204, 112);
+  transition: all 0.3s ease;
 }
 
 .vantagem-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(46, 204, 113, 0.15);
+}
+
+.vantagem-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px; /* Espaço reduzido */
+}
+
+.vantagem-icon {
+  width: 20px; /* Ícone menor */
+  height: 20px;
+  color: var(--verde);
 }
 
 .vantagem-card h3 {
   color: var(--preto);
-  font-size: 1.4rem;
+  font-size: 1.2rem; /* Fonte um pouco menor */
   font-weight: 700;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 .vantagem-card ul {
@@ -366,25 +391,37 @@ ul {
 }
 
 .vantagem-card li {
-  margin-bottom: 15px;
-  padding-left: 28px;
+  margin-bottom: 10px; /* Espaço entre itens reduzido */
+  padding-left: 24px;
   position: relative;
-  color: var(--cinza-texto);
-  line-height: 1.6;
+  color: var(--cinza-escuro);
+  line-height: 1.4; /* Line-height mais compacto */
+  font-size: 0.9rem; /* Fonte menor */
 }
 
 .vantagem-card li::before {
-  content: "✓";
+  content: "";
   position: absolute;
   left: 0;
-  color: var(--verde);
-  font-weight: bold;
+  top: 7px;
+  width: 14px;
+  height: 2px;
+  background-color: var(--verde);
 }
 
 /* Responsivo */
 @media (max-width: 768px) {
+  .vantagens-section {
+    padding: 25px 0;
+  }
+  
   .vantagens-grid {
     grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .vantagem-card {
+    padding: 20px;
   }
 }
 
