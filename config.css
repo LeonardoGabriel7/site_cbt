@@ -266,195 +266,177 @@ ul {
 
 /* Estilos para a seção de contato no footer */
 .contact-footer {
-  background: var(--cinza-claro);
-  padding: 3rem 0;
-  font-family: var(--fonte-principal);
-}
+      background: var(--cinza-claro);
+      padding: 1.5rem 0;
+      font-family: var(--fonte-principal);
+    }
 
-.contact-footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 3rem;
-}
+    .contact-footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 3rem;
+    }
 
-/* Estilos para a coluna esquerda */
-.footer-left {
-  flex: 1;
-}
+    /* COLUNA ESQUERDA - INFORMAÇÕES */
+    .footer-left {
+      flex: 1;
+      text-align: left;
+    }
 
-.footer-card {
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-}
+    .footer-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-align: left;
+    }
 
-.contact-badge {
-  display: inline-block;
-  background: var(--verde);
-  color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-bottom: 0.8rem;
-  text-transform: uppercase;
-}
+    .contact-badge {
+      display: inline-block;
+      background: var(--verde);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+    }
 
-.contact-title {
-  font-size: 1.4rem;
-  color: var(--preto);
-  margin: 0 0 1.5rem;
-  font-weight: 700;
-}
+    .contact-title {
+      font-size: 1.3rem;
+      color: var(--preto);
+      margin: 0 0 1.2rem;
+      font-weight: 700;
+    }
 
-.contact-info {
-  display: grid;
-  gap: 1.5rem;
-}
+    .contact-info {
+      display: grid;
+      gap: 1.2rem;
+    }
 
-.contact-item {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-}
+    .contact-item {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
 
-.contact-icon {
-  flex-shrink: 0;
-  margin-top: 0.2rem;
-}
+    .contact-icon {
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
 
-.contact-text {
-  font-size: 1rem;
-  color: var(--cinza-escuro);
-  margin: 0;
-  line-height: 1.5;
-}
+    .contact-text {
+      font-size: 0.95rem;
+      color: var(--cinza-escuro);
+      margin: 0;
+      line-height: 1.5;
+    }
 
-/* Estilos para os links sociais */
-.social-links {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(0,0,0,0.1);
-}
+    /* REDES SOCIAIS */
+    .social-links {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1.8rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      justify-content: flex-start;
+    }
 
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #f8f9fa;
-  transition: all 0.3s ease;
-  color: var(--verde);
-}
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f8f9fa;
+      transition: all 0.2s ease;
+      color: var(--verde);
+    }
 
-.social-link svg {
-  transition: all 0.3s ease;
-}
+    .social-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 2px 6px rgba(46, 204, 113, 0.2);
+    }
 
-.social-link:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(46, 204, 113, 0.2);
-}
+    .social-link svg {
+      width: 18px;
+      height: 18px;
+    }
 
-.social-link:hover svg {
-  transform: scale(1.1);
-}
+    /* COLUNA DIREITA - LOGO */
+    .footer-right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding-top: 0.5rem;
+    }
 
-/* Estilos para a coluna direita (logo) */
-.footer-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .logo-img {
+      max-height: 280px;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
 
-.logo-img {
-  max-height: 400px;
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
+    /* RESPONSIVIDADE */
+    @media (max-width: 992px) {
+      .contact-footer .container {
+        gap: 2rem;
+      }
+      
+      .logo-img {
+        max-height: 240px;
+      }
+    }
 
-.logo-img:hover {
-  transform: scale(1.03);
-}
+    @media (max-width: 768px) {
+      .contact-footer .container {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1.5rem;
+      }
+      
+      .footer-card {
+        padding: 1.25rem;
+      }
+      
+      .logo-img {
+        max-height: 200px;
+        margin-left: -0.5rem;
+      }
+      
+      .contact-item {
+        gap: 0.6rem;
+      }
+    }
 
-/* Responsividade */
-@media (max-width: 992px) {
-  .contact-footer .container {
-    gap: 2rem;
-  }
-  
-  .footer-card {
-    padding: 1.5rem;
-  }
-  
-  .logo-img {
-    max-height: 350px;
-  }
-}
-
-@media (max-width: 768px) {
-  .contact-footer .container {
-    flex-direction: column;
-    text-align: center;
-    gap: 2.5rem;
-  }
-  
-  .footer-left, .footer-right {
-    width: 100%;
-  }
-  
-  .contact-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.5rem;
-  }
-  
-  .social-links {
-    justify-content: center;
-  }
-  
-  .logo-img {
-    max-height: 300px;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-footer {
-    padding: 2rem 0;
-  }
-  
-  .contact-footer .container {
-    padding: 0 1.5rem;
-  }
-  
-  .footer-card {
-    padding: 1.25rem;
-  }
-  
-  .contact-title {
-    font-size: 1.3rem;
-    margin-bottom: 1.25rem;
-  }
-  
-  .logo-img {
-    max-height: 250px;
-  }
-}
+    @media (max-width: 480px) {
+      .contact-footer {
+        padding: 1rem 0;
+      }
+      
+      .logo-img {
+        max-height: 180px;
+        margin-top: -70px;
+        margin-bottom:-70px;
+      }
+      
+      .contact-title {
+        font-size: 1.2rem;
+      }
+      
+      .contact-text {
+        font-size: 0.9rem;
+      }
+    }
 
 
 
