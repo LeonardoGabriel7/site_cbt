@@ -115,7 +115,7 @@ ul {
 }
 
 .btn-agendar:hover, .btn-agendar:focus {
-    background-color: var(--verde-escuro);
+    background-color: #27ae60;
     outline: none;
 }
 
