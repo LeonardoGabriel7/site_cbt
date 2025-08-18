@@ -32,256 +32,185 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-/* Header */
+/* ===== HEADER ===== */
 .header {
-    background-color: #ffffff !important;
-    border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.3s ease;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  padding: 0.6rem 0; /* altura um pouco menor */
 }
 
-.header.scrolled {
-    background-color: #ffffff !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 2rem;
 }
 
-.header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.8rem 1rem;
-    background-color: #ffffff !important;
-    gap: 2rem;
-}
-
-/* Logo */
-.logo {
-    margin-right: auto; /* Empurra o resto do conteúdo para a direita */
-}
-
+/* ===== LOGO (Esquerda) ===== */
 .logo img {
-    max-height: 60px;
-    display: block;
-    width: auto;
-    transition: all 0.3s ease;
+  height: 65px; /* tamanho da logo */
+  width: auto;
+  display: block;
 }
 
-/* Menu toggle - hamburger */
-.menu-toggle {
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--preto);
-    display: none;
-    z-index: 1100;
-    padding: 0.5rem;
+.logo:hover img {
+  transform: scale(1.05);
 }
 
-/* Nav */
+/* ===== MENU (Centro) ===== */
 .nav {
-    margin: 0 auto; /* Centraliza o menu */
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .nav ul {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-/* Links do menu */
-.nav a {
-    position: relative;
-    text-decoration: none;
-    color: var(--preto);
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding-bottom: 4px;
-    transition: color 0.3s;
-    white-space: nowrap;
+.nav-link {
+  position: relative;
+  color: var(--preto);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  transition: color 0.3s;
+  white-space: nowrap;
 }
 
-.nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background-color: var(--verde);
-    transition: width 0.3s;
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--verde);
+  transition: width 0.3s;
 }
 
-.nav a:hover, .nav a:focus {
-    color: var(--verde);
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  color: var(--verde);
 }
 
-.nav a:hover::after, .nav a:focus::after {
-    width: 100%;
+.nav-link:hover::after,
+.nav-link:focus::after,
+.nav-link.active::after {
+  width: 100%;
 }
 
-/* Botão agendar desktop */
-.btn-agendar {
-    background-color: var(--verde);
-    color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    white-space: nowrap;
-    margin-left: 1rem;
+/* ===== BOTÕES (Direita) ===== */
+.area-buttons {
+  display: flex;
+  gap: 0.8rem;
+  margin-left: auto;
 }
 
-.btn-agendar:hover, .btn-agendar:focus {
-    background-color: #27ae60;
-    outline: none;
+.area-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  background-color: var(--verde); /* todos no verde claro */
+  color: white;
 }
 
-/* Botão agendar mobile */
-.btn-agendar-mobile {
-    background-color: var(--verde);
-    color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    font-weight: 600;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 100%;
-    margin-top: 1rem;
-    display: none;
+.area-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.btn-agendar-mobile:hover, .btn-agendar-mobile:focus {
-    background-color: #27ae60;
-    outline: none;
+/* ===== MENU MOBILE ===== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--preto);
+  cursor: pointer;
+  margin-left: 1rem;
 }
 
-/* Responsivo */
-@media (max-width: 1024px) {
-    .nav ul {
-        gap: 1rem;
-    }
-    
-    .nav a {
-        font-size: 0.9rem;
-    }
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1200px) {
+  .nav ul {
+    gap: 1rem;
+  }
+  .area-btn {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .header-container {
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+  }
+  .nav-link {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-    
-    .nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        background: #ffffff !important;
-        height: 100vh;
-        width: 280px;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
-        flex-direction: column;
-        padding: 5rem 1.5rem 1.5rem;
-        box-shadow: -2px 0 8px rgba(0,0,0,0.1);
-        margin: 0;
-    }
-    
-    .nav.nav-open {
-        transform: translateX(0);
-    }
-    
-    .nav ul {
-        flex-direction: column;
-        gap: 1.5rem;
-        align-items: flex-start;
-        width: 100%;
-    }
-    
-    .nav a {
-        font-size: 1.1rem;
-        padding: 0.5rem 0;
-        display: block;
-        width: 100%;
-    }
-    
-    .btn-agendar {
-        display: none;
-    }
-    
-    .btn-agendar-mobile {
-        display: block;
-    }
-    
-    .logo img {
-        max-height: 50px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header .container {
-        padding: 0.6rem 1rem;
-    }
-    
-    .logo img {
-        max-height: 45px;
-    }
-}
-
-
-/* Linha verde embaixo - para hover E active */
-.nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background-color: var(--verde);
-    transition: width 0.3s;
-}
-
-
-/* Efeito hover - MANTENDO SEU ESTILO ORIGINAL */
-.nav a:hover, 
-.nav a:focus,
-.nav a.active { /* Adicionado .active */
-    color: var(--verde);
-}
-
-.nav a:hover::after,
-.nav a:focus::after,
-.nav a.active::after { /* Adicionado .active */
+  .nav, .area-buttons {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .logo img {
+    height: 45px;
+  }
+  /* Mobile Menu */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    padding: 5rem 1.5rem;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+  .mobile-menu.mobile-open {
+    transform: translateX(0);
+  }
+  .mobile-menu .nav ul {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .mobile-menu .area-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .mobile-menu .area-btn {
     width: 100%;
+    text-align: center;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
