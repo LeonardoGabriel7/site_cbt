@@ -96,3 +96,47 @@ document.addEventListener('DOMContentLoaded', function() {
       menuToggle.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
     });
   });
+
+
+
+
+
+
+
+
+  // Adiciona classe 'active' ao item de menu correspondente à página atual
+document.addEventListener('DOMContentLoaded', function() {
+    // Remove a classe active de todos os links primeiro
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => link.classList.remove('active'));
+    
+    // Obtém o caminho atual (considerando que pode ser index.html ou /)
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Encontra o link correspondente e adiciona a classe active
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href').split('/').pop();
+        if (currentPath === linkPath || 
+            (currentPath === '' && linkPath === 'index.html') ||
+            (currentPath.endsWith('.html') && linkPath === currentPath)) {
+            link.classList.add('active');
+        }
+    });
+
+    // Para links externos (como Vagas) que abrem em nova aba
+    document.querySelectorAll('.nav-link[target="_blank"]').forEach(link => {
+        link.classList.remove('active');
+    });
+});
+
+// Se for um SPA (Single Page Application), adicione este código também:
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (!this.getAttribute('target') || this.getAttribute('target') !== '_blank') {
+            document.querySelectorAll('.nav-link').forEach(item => {
+                item.classList.remove('active');
+            });
+            this.classList.add('active');
+        }
+    });
+});
