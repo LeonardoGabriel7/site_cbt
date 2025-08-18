@@ -1,3 +1,138 @@
-
-
-
+    :root {
+            --fonte-principal: 'Inter', sans-serif;
+            --verde: #2ecc71;
+            --verde-escuro: #27ae60;
+            --preto: #2c3e50;
+            --cinza: #f8f9fa;
+            --branco: #ffffff;
+            --cinza-texto: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--fonte-principal);
+            color: var(--preto);
+            line-height: 1.6;
+            background-color: var(--cinza);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Service Details */
+        .service-details-section {
+            padding: 40px 0;
+            background: var(--branco);
+        }
+        
+        .service-detail {
+            margin-bottom: 50px;
+        }
+        
+        /* Imagens - visíveis apenas no desktop */
+        .service-image {
+            display: none;
+        }
+        
+        .service-text {
+            width: 100%;
+        }
+        
+        .service-text h2 {
+            color: var(--verde-escuro);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        
+        .service-text h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--verde);
+        }
+        
+        .service-text p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .feature-list {
+            margin-top: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        
+        .feature-icon {
+            color: var(--verde);
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+        
+        .feature-text strong {
+            color: var(--verde-escuro);
+            font-weight: 600;
+        }
+        
+        /* Versão Desktop */
+        @media (min-width: 992px) {
+            .service-detail {
+                display: flex;
+                gap: 60px;
+                margin-bottom: 80px;
+            }
+            
+            .service-image {
+                display: block;
+                flex: 1;
+                min-width: 300px;
+                height: 400px;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+            
+            .service-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+            
+            .service-image:hover img {
+                transform: scale(1.05);
+            }
+            
+            .service-text {
+                flex: 1;
+            }
+            
+            .service-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            /* Alterna a posição das imagens */
+            .service-detail:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+        }
