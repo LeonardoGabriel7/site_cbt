@@ -1,84 +1,127 @@
 
 
 
-.hero {
-  background: linear-gradient(135deg, #f8f9fa 0%, #eef5f1 100%);
-  padding: 6rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
+.hero-video {
+            position: relative;
+            width: 100%;
+            height: 40vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .background-video {
+            position: absolute;
+            top: 0; 
+            left: 0;
+            width: 100%; 
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            object-position: 80% 30%;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0; 
+            left: 0;
+            width: 100%; 
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: -1;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+        }
+        
+        .hero-content h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .hero-content h1 span {
+            color: var(--verde);
+        }
+        
+        .hero-content p {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            font-weight: 400;
+        }
+        
+        .btn {
+            background: var(--verde);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background: #27ae60;
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero-video {
+                height: 50vh;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 0.7rem 1.8rem;
+                font-size: 0.9rem;
+            }
+        }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  background: rgba(46, 204, 113, 0.15);
-  border-radius: 50%;
-  top: -80px;
-  left: -80px;
-}
 
-.hero::after {
-  content: '';
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: rgba(46, 204, 113, 0.1);
-  border-radius: 50%;
-  bottom: -100px;
-  right: -100px;
-}
 
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  color: #222;
-}
 
-.hero h1 span {
-  color: var(--verde);
-}
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #555;
-}
 
-.btn {
-  background: var(--verde);
-  color: #fff;
-  padding: 0.9rem 2.2rem;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
-}
 
-.btn:hover {
-  background: #27ae60;
-  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
-}
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .hero {
-    padding: 4rem 1rem;
-  }
 
-  .hero h1 {
-    font-size: 2rem;
-  }
 
-  .hero p {
-    font-size: 1rem;
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Empresas */
 .empresas-section {
