@@ -91,68 +91,194 @@
 
 
 .jovem-aprendiz-section {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    background-color: white;
-    font-family: var(--fonte-principal);
-}
-
-.jovem-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.jovem-tag {
-    font-size: 0.9rem;
-    color: var(--verde);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    display: block;
-}
-
-.jovem-title {
-    font-size: 1.8rem;
-    color: var(--preto);
-    margin-bottom: 8px;
-    font-weight: 700;
-}
-
-.jovem-subtitle {
-    font-size: 1.2rem;
-    color: var(--verde);
-    font-weight: 600;
-}
-
-.jovem-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.jovem-text {
-    font-size: 1rem;
-    color: var(--cinza-escuro);
-    margin-bottom: 15px;
-    line-height: 1.6;
-    text-align: center;
-}
-
-@media (max-width: 768px) {
-    .jovem-aprendiz-section {
-        padding: 30px 15px;
-    }
-    
-    .jovem-title {
-        font-size: 1.5rem;
-    }
-    
-    .jovem-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .jovem-text {
-        text-align: left;
-    }
-}
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .jovem-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .jovem-tag {
+            font-size: 0.9rem;
+            color: var(--verde);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .jovem-title {
+            font-size: 2.2rem;
+            color: var(--preto);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .jovem-subtitle {
+            font-size: 1.2rem;
+            color: var(--verde);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .jovem-intro {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .content-block {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            gap: 40px;
+        }
+        
+        .content-block.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .text-content {
+            flex: 1;
+        }
+        
+        .image-content {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-content:hover img {
+            transform: scale(1.03);
+        }
+        
+        .content-title {
+            font-size: 1.6rem;
+            color: var(--verde);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .content-text {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .benefits-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .benefits-box {
+            flex: 1;
+            background-color: var(--cinza-claro);
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid var(--verde);
+        }
+        
+        .benefits-title {
+            font-size: 1.3rem;
+            color: var(--preto);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .benefits-list {
+            list-style-type: none;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .benefits-list li:before {
+            content: "✓";
+            color: var(--verde);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .cta-container {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px;
+            background-color: var(--cinza-claro);
+            border-radius: 10px;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--verde);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #267349;
+        }
+        
+        @media (max-width: 992px) {
+            .content-block, 
+            .content-block.reverse {
+                flex-direction: column;
+            }
+            
+            .benefits-container {
+                flex-direction: column;
+            }
+            
+            .image-content {
+                margin-top: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .jovem-aprendiz-section {
+                padding: 40px 15px;
+            }
+            
+            .jovem-title {
+                font-size: 1.8rem;
+            }
+            
+            .content-title {
+                font-size: 1.4rem;
+            }
+            
+            .benefits-box {
+                padding: 20px;
+            }
+        }
